@@ -6,12 +6,12 @@ public class MyFirstProgram { //class name starts with uppercase
 		hello("world");
 		hello("user");
 		hello("rahman");
-		double len = 5;
-		System.out.println("Square of square with side " + len + " = " + area(len));
 
-		double a = 4;
-		double b = 6;
-		System.out.println("Square of rectangle with sides " + a + " and " + b + " = " + area(a, b));
+		Square s = new Square(5);
+		System.out.println("Square of square with side " + s.l + " = " + s.area());
+
+    Rectangle r = new Rectangle(4, 6);
+		System.out.println("Square of rectangle with sides " + r.a + " and " + r.b + " = " + r.area());
 
 	}
 
@@ -20,14 +20,8 @@ public class MyFirstProgram { //class name starts with uppercase
 
 	}
 
-	public static double area(double l) {
-		return l * l;
 
-	}
-	public static double area(double a, double b) {
-		return a * b;
 
-	}
 
 }
 	
