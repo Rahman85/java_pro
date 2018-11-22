@@ -23,8 +23,6 @@ public class ApplicationMansger {
     sessionHelper.Login("admin", "secret");
   }
 
-
-
   public void stop() {
     wd.quit();
   }
