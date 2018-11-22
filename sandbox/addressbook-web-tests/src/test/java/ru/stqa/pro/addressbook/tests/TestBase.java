@@ -1,12 +1,13 @@
 package ru.stqa.pro.addressbook.tests;
 
+import org.openqa.selenium.remote.BrowserType;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import ru.stqa.pro.addressbook.appmanager.ApplicationMansger;
 
 public class TestBase {
 
-  protected final ApplicationMansger app = new ApplicationMansger();
+  protected final ApplicationMansger app = new ApplicationMansger(BrowserType.CHROME);
 
   @BeforeMethod
   public void setUp() throws Exception {

@@ -2,13 +2,14 @@ package ru.stqa.pro.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class HelperBase {
-  protected ChromeDriver wd;
+  protected WebDriver wd;
 
-  public HelperBase(ChromeDriver wd) {
+  public HelperBase(WebDriver wd) {
     this.wd = wd;
   }
 
@@ -18,8 +19,14 @@ public class HelperBase {
 
   protected void type(By Locator, String text) {
     click(Locator);
-    wd.findElement(Locator).clear();
-    wd.findElement(Locator).sendKeys(text);
+    if (text != null) {
+      String existingText = wd.findElement(Locator).getAttribute("value");
+      if (! text.equals(existingText)) {
+        wd.findElement(Locator).clear();
+        wd.findElement(Locator).sendKeys(text);
+      }
+
+    }
   }
   public boolean isAlertPresent() {
     try {
