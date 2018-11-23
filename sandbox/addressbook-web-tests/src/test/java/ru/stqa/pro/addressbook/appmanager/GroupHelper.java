@@ -9,6 +9,11 @@ import ru.stqa.pro.addressbook.model.GroupData;
 
 public class GroupHelper extends HelperBase {
 
+
+  public boolean isThereAContact() {
+    return isElementPresent(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
+  }
+
   public GroupHelper(WebDriver wd) {
     super(wd);
   }
@@ -85,5 +90,16 @@ public class GroupHelper extends HelperBase {
 
   public boolean isThereAGroup() {
     return isElementPresent(By.name("selected[]"));
+  }
+
+  public void createContact(ContactData contact) {
+    initContactCreation();
+    fillContactForm((contact), true);
+    submitNewContact();
+
+  }
+
+  public void deleteContactForm() {
+    click(By.xpath("//div[@id='content']/form[2]/input[2]"));
   }
 }

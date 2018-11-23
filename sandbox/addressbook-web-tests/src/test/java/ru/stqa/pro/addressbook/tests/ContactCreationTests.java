@@ -9,9 +9,6 @@ public class ContactCreationTests extends TestBase {
   public void testContactCreation() {
 
     app.getNavigationHelper().gotoGroupPage();
-    app.getGroupHelper().initContactCreation();
-    app.getGroupHelper().fillContactForm(new ContactData("Timur", "Mergenov", "tree1"), true);
-    app.getGroupHelper().submitNewContact();
     app.getNavigationHelper().gotoHomePage();
 
   }
