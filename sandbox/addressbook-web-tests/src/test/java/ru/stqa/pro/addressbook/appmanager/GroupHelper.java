@@ -73,4 +73,17 @@ public class GroupHelper extends HelperBase {
   public void updateContactForm() {
     click(By.xpath("//div[@id='content']/form[1]/input[22]"));
   }
+
+  public void createGroup(GroupData group) {
+    initGroupCreation();
+    fillGroupForm(group);
+    submitGroupCreation();
+    returnToGroupPage();
+
+
+  }
+
+  public boolean isThereAGroup() {
+    return isElementPresent(By.name("selected[]"));
+  }
 }
