@@ -16,6 +16,7 @@ public class ApplicationMansger {
   private GroupHelper groupHelper;
   private String browser;
 
+
   public ApplicationMansger(String browser) {
     this.browser = browser;
   }
@@ -32,7 +33,7 @@ public class ApplicationMansger {
 
       wd = new InternetExplorerDriver();
     }
-    wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     wd.get("http://localhost/addressbook/group.php");
     groupHelper = new GroupHelper(wd);
     navigationHelper = new NavigationHelper(wd);
