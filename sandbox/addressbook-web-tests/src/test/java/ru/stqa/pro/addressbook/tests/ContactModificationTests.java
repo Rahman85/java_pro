@@ -7,6 +7,7 @@ public class ContactModificationTests extends TestBase {
 
   @Test
   public void testContactModification() {
+
     app.getNavigationHelper().gotoHomePage();
     if (! app.getGroupHelper().isThereAContact()) {
       app.getGroupHelper().createContact(new ContactData("Timur", "Mergenov", "null"));
