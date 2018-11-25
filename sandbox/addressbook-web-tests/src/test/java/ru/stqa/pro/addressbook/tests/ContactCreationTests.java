@@ -5,7 +5,7 @@ import ru.stqa.pro.addressbook.model.ContactData;
 
 public class ContactCreationTests extends TestBase {
 
-  @Test
+  @Test(enabled = false)
   public void testContactCreation() {
 
     app.getNavigationHelper().gotoGroupPage();

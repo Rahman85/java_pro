@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import ru.stqa.pro.addressbook.model.ContactData;
 
 public class ContactDeleteTests extends TestBase {
-  @Test
+  @Test(enabled = false)
   public void testContactDeletion() {
     app.getNavigationHelper().gotoHomePage();
     if (!app.getGroupHelper().isThereAContact()) {
