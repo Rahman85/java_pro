@@ -24,7 +24,7 @@ public class ApplicationMansger {
 
   public void init() {
     if (browser.equals(BrowserType.CHROME)) {
-      System.setProperty("webdriver.chrome.driver", "C:\\Users\\hajee\\Desktop\\chromedriver_win32\\chromedriver.exe");
+      System.setProperty("webdriver.chrome.driver", "/Users/rahman/Desktop/chromedriver");
       wd = new ChromeDriver();
     } else if (browser.equals(BrowserType.FIREFOX)) {
       wd = new FirefoxDriver();
@@ -45,11 +45,11 @@ public class ApplicationMansger {
     wd.quit();
   }
 
-  public GroupHelper getGroupHelper() {
+  public GroupHelper group() {
     return groupHelper;
   }
 
-  public NavigationHelper getNavigationHelper() {
+  public NavigationHelper goTo() {
     return navigationHelper;
   }
 }

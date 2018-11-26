@@ -6,13 +6,13 @@ import ru.stqa.pro.addressbook.model.ContactData;
 public class ContactDeleteTests extends TestBase {
   @Test(enabled = false)
   public void testContactDeletion() {
-    app.getNavigationHelper().gotoHomePage();
-    if (!app.getGroupHelper().isThereAContact()) {
-      app.getGroupHelper().createContact(new ContactData("Timur", "Mergenov", "null"));
+    app.goTo().gotoHomePage();
+    if (!app.group().isThereAContact()) {
+      app.group().createContact(new ContactData("Timur", "Mergenov", "null"));
 
     }
-    app.getGroupHelper().initContactModification();
-    app.getGroupHelper().deleteContactForm();
+    app.group().initContactModification();
+    app.group().deleteContactForm();
 
   }
 }

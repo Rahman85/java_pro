@@ -8,14 +8,14 @@ public class ContactModificationTests extends TestBase {
   @Test (enabled = false)
   public void testContactModification() {
 
-    app.getNavigationHelper().gotoHomePage();
-    if (! app.getGroupHelper().isThereAContact()) {
-      app.getGroupHelper().createContact(new ContactData("Timur", "Mergenov", "null"));
+    app.goTo().gotoHomePage();
+    if (! app.group().isThereAContact()) {
+      app.group().createContact(new ContactData("Timur", "Mergenov", "null"));
 
     }
-    app.getGroupHelper().initContactModification();
-    app.getGroupHelper().fillContactForm(new ContactData("Alex", "Super", "null"), false);
-    app.getGroupHelper().updateContactForm();
+    app.group().initContactModification();
+    app.group().fillContactForm(new ContactData("Alex", "Super", "null"), false);
+    app.group().updateContactForm();
 
 
   }
