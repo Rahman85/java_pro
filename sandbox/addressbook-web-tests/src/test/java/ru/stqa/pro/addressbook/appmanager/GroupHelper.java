@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pro.addressbook.model.ContactData;
 import ru.stqa.pro.addressbook.model.GroupData;
+import ru.stqa.pro.addressbook.model.Groups;
 
 import java.util.HashSet;
 import java.util.List;
@@ -131,8 +132,8 @@ public class GroupHelper extends HelperBase {
    return wd.findElements(By.name("selected[]")).size();
   }
 
-  public Set<GroupData> all() {
-    Set<GroupData> groups = new HashSet<GroupData>();
+  public Groups all() {
+    Groups groups = new Groups();
     List<WebElement> elements = wd.findElements(By.cssSelector("span.group"));
     for (WebElement element : elements) {
       String name = element.getText();
