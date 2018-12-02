@@ -52,4 +52,6 @@ public class ApplicationMansger {
   public NavigationHelper goTo() {
     return navigationHelper;
   }
+
+
 }
